@@ -1,0 +1,7 @@
+.app-tab .MuiTabs-flexContainer {
+  justify-content: space-around !important;
+}
+
+.app-button {
+  margin-bottom: 20px;
+}
