@@ -27,7 +27,7 @@ const Chart = ({ chartData, type, title, theme }) => {
     axisY: {
       includeZero: false,
       prefix: "",
-      title: "Price (in USD)",
+      title: "Price",
       interval: 100,
     },
 
