@@ -14,7 +14,7 @@ function TabPanel(props) {
 
   return (
     <div
-      role='tabpanel'
+      role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -57,10 +57,10 @@ const AppTab = () => {
   };
   return (
     <div className={classes.root}>
-      <AppBar position='static'>
-        <Tabs value={value} onChange={handleChange} className='app-tab'>
-          <Tab label='Home' {...a11yProps(0)} />
-          <Tab label='Live Charts' {...a11yProps(1)} />
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange} className="app-tab">
+          <Tab label="Home" {...a11yProps(0)} />
+          <Tab label="Live Charts" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
