@@ -32,7 +32,6 @@ const LiveChart = ({ theme }) => {
         if (value.length > 2) {
           liveData = mapToChartData(value);
         }
-        console.log(liveData);
         setData(liveData);
         callback(1);
       },
@@ -46,7 +45,7 @@ const LiveChart = ({ theme }) => {
   });
 
   return (
-    <div className='live-chart-container'>
+    <div className="live-chart-container">
       {value.length > 3 ? (
         <>
           <AppButton type={type} setType={setType} />

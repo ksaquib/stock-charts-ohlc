@@ -1,5 +1,5 @@
 const appConstants = {
-  BASE_URL: "https://cors-anywhere.herokuapp.com/http://kaboom.rksv.net",
+  BASE_URL: "http://kaboom.rksv.net",
   CHART_TYPE: {
     OHLC: "ohlc",
     CANDLESTICK: "candlestick",

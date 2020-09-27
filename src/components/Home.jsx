@@ -28,7 +28,7 @@ const Home = ({ theme }) => {
     }
   };
   return (
-    <div className='home-container'>
+    <div className="home-container">
       {data.length > 0 ? (
         <>
           <AppButton type={type} setType={setType} />
