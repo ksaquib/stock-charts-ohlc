@@ -16,34 +16,41 @@ const LiveChart = ({ theme }) => {
   const ENDPOINT = `${appConstants.BASE_URL}/watch`;
 
   useEffect(() => {
-    socket = io(ENDPOINT, {
-      extraHeaders: {
-        "Accept-­Encoding": "gzip",
-      },
-    });
+    //Checking Internet Connection
+    let online = window.navigator.onLine;
+    if (online) {
+      socket = io(ENDPOINT, {
+        extraHeaders: {
+          "Accept-­Encoding": "gzip",
+        },
+      });
 
-    socket.emit("sub", { state: true });
+      socket.emit("sub", { state: true });
 
-    socket.on(
-      "data",
-      (data, callback) => {
+      socket.on("data", (data, callback) => {
         value.push(data);
         setValue(value);
         let liveData = [];
         if (value.length > 2) {
           liveData = mapToChartData(value);
         }
+
+        localStorage.setItem("liveData", JSON.stringify(liveData));
         setData(liveData);
         callback(1);
-      },
-      [data]
-    );
+      });
 
-    return () => {
-      socket.emit("unsub", { state: false });
-      socket.off();
-    };
-  });
+      return () => {
+        socket.emit("unsub", { state: false });
+        socket.off();
+      };
+    } else {
+      if (localStorage.getItem("liveData")) {
+        const liveData = JSON.parse(localStorage.getItem("liveData"));
+        setData(liveData);
+      }
+    }
+  }, []);
 
   return (
     <div className="live-chart-container">
@@ -63,6 +70,9 @@ const LiveChart = ({ theme }) => {
       )}
     </div>
   );
+};
+LiveChart.defaultProps = {
+  theme: false,
 };
 //Proptypes for Home
 LiveChart.propTypes = {

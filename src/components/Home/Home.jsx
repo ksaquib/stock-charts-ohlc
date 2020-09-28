@@ -16,16 +16,28 @@ const Home = ({ theme }) => {
     return () => {};
   }, []);
   const getData = async () => {
-    try {
-      const res = await axios.get(
-        `${appConstants.BASE_URL}/api/historical?interval=1`
-      );
+    //Checking Internet Connection
+    let online = window.navigator.onLine;
+    if (online) {
+      try {
+        const res = await axios.get(
+          `${appConstants.BASE_URL}/api/historical?interval=1`
+        );
 
-      let data = res.data;
-      let historicalData = mapToChartData(data);
-      setData(historicalData);
-    } catch (error) {
-      console.log(error);
+        let data = res.data;
+        let historicalData = mapToChartData(data);
+        localStorage.setItem("historicalData", JSON.stringify(historicalData));
+        setData(historicalData);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      if (localStorage.getItem("historicalData")) {
+        const historicalData = JSON.parse(
+          localStorage.getItem("historicalData")
+        );
+        setData(historicalData);
+      }
     }
   };
   return (
@@ -46,6 +58,10 @@ const Home = ({ theme }) => {
       )}
     </div>
   );
+};
+//Default Props
+Home.defaultProps = {
+  theme: false,
 };
 //Proptypes for Home
 Home.propTypes = {
