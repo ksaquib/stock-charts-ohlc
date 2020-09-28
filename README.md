@@ -35,7 +35,7 @@ Use npm to install the project.
 
     npm run start
 
-**Running the app:**
+**Testing the app:**
 
     npm run test
 
