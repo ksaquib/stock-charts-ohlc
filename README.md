@@ -1,5 +1,7 @@
 ## Stock OHLC Charts
 
+###### Demo - http://stock-ohlc-charts.surge.sh/
+
 A React Application to display Historical and Live data on OHLC and CandleStick Charts.
 
 With this application you can see the historical data as well as check the stocks open high low close of each day and other feature include pan and zoom of charts also if we go to live chart tab we can see the live data coming from the server and the last but not least you can also export chart as pdf and png.
