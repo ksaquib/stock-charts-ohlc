@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Chart from "../common/components/Chart";
-import { mapToChartData } from "../common/utils/mapData";
-import AppButton from "../common/components/AppButton";
-import appConstants from "../common/constants/appConstants";
-import Loader from "../common/components/Loader";
+import Chart from "../../common/components/Chart";
+import { mapToChartData } from "../../common/utils/mapData";
+import AppButton from "../../common/components/AppButton";
+import appConstants from "../../common/constants/appConstants";
+import Loader from "../../common/components/Loader";
+import PropTypes from "prop-types";
 
 const Home = ({ theme }) => {
   const [data, setData] = useState([]);
@@ -46,5 +47,8 @@ const Home = ({ theme }) => {
     </div>
   );
 };
-
+//Proptypes for Home
+Home.propTypes = {
+  theme: PropTypes.bool.isRequired,
+};
 export default Home;

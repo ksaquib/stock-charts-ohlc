@@ -5,8 +5,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Box from "@material-ui/core/Box";
-import Home from "./Home";
-import LiveChart from "./LiveChart";
+import Home from "./Home/Home";
+import LiveChart from "./Live-Charts/LiveChart";
 import ThemeSwitcher from "../common/components/ThemeSwitcher";
 
 function TabPanel(props) {

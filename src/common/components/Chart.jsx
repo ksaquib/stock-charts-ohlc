@@ -1,6 +1,7 @@
 /* App.js */
 import React from "react";
 import CanvasJSReact from "../../assets/canvasjs.react";
+import PropTypes from "prop-types";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const Chart = ({ chartData, type, title, theme }) => {
@@ -54,5 +55,11 @@ const Chart = ({ chartData, type, title, theme }) => {
     </div>
   );
 };
-
+//Proptypes for chart
+Chart.propTypes = {
+  chartData: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+};
 export default Chart;

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
-import AppButton from "../common/components/AppButton";
-import { mapToChartData } from "../common/utils/mapData";
-import Chart from "../common/components/Chart";
-import appConstants from "../common/constants/appConstants";
-import Loader from "../common/components/Loader";
+import AppButton from "../../common/components/AppButton";
+import { mapToChartData } from "../../common/utils/mapData";
+import Chart from "../../common/components/Chart";
+import appConstants from "../../common/constants/appConstants";
+import Loader from "../../common/components/Loader";
+import PropTypes from "prop-types";
 
 let socket;
 const LiveChart = ({ theme }) => {
@@ -63,5 +64,8 @@ const LiveChart = ({ theme }) => {
     </div>
   );
 };
-
+//Proptypes for Home
+LiveChart.propTypes = {
+  theme: PropTypes.bool.isRequired,
+};
 export default LiveChart;

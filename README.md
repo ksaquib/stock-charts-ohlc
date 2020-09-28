@@ -33,7 +33,11 @@ Use npm to install the project.
 
 **Running the app:**
 
-    npm start
+    npm run start
+
+**Running the app:**
+
+    npm run test
 
 ## Folder Structure
 

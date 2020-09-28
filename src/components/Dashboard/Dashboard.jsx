@@ -1,5 +1,5 @@
 import React from "react";
-import AppTab from "./AppTab";
+import AppTab from "../AppTab";
 
 const Dashboard = () => {
   return (
